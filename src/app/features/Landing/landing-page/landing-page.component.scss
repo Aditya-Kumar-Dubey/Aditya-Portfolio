@@ -1,0 +1,22 @@
+.home-grid {
+    display: grid;
+    grid-template-columns: 4rem minmax(10rem, 1fr) 1fr;
+}
+
+.home-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.home__blob {
+    width: 360px;
+}
+
+.home__blob-img {
+    width: 180%;
+    height: 145%;
+    padding-left: 30px;
+}

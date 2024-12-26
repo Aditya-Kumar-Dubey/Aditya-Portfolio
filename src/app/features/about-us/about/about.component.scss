@@ -1,0 +1,31 @@
+.about__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.about__img {
+    width: 342px;
+    border-radius: 500%;
+    justify-self: center;
+    align-self: center;
+    /* border: 1px solid #fff; */
+}
+
+
+.about__info {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2.5rem;
+}
+
+.about__info-title {
+    font-size: 1.25rem;
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+}
+
+.about__info-name,
+.about__info-title {
+    display: block;
+    text-align: center;
+}

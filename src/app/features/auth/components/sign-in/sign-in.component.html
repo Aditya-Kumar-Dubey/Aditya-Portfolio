@@ -1,0 +1,58 @@
+<div class="container h-screen">
+  <div class="flex h-full">
+    <!-- Form Section -->
+    <div class="login-form flex-1 flex justify-center items-center">
+      <div class="w-[42%] space-y-5">
+        <!-- Logo -->
+        <div>
+          <img src="assets/logos/logo.png" alt="Logo">
+        </div>
+
+        <!-- Heading -->
+        <p class="text-lg font-medium pl-1">Login Into Your Account</p>
+
+        <!-- Form -->
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-4">
+          <!-- Radio Buttons -->
+          <div class="flex space-x-5">
+            <mat-radio-group formControlName="userType" aria-label="Select an option">
+              <mat-radio-button value="retail">Retail</mat-radio-button>
+              <mat-radio-button class="ml-3" value="corporate">Corporate</mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <!-- Email Input -->
+          <mat-form-field class="w-full">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+            <mat-error *ngIf="loginForm.get('email')?.hasError('email') && !loginForm.get('email')?.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Password Input -->
+          <mat-form-field class="w-full">
+            <mat-label>Enter your password</mat-label>
+            <input matInput type="password" formControlName="password">
+            <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Submit Button -->
+          <button mat-flat-button class="w-full white bg-primary" type="submit" [disabled]="loginForm.invalid">
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Image Section -->
+    <div class="login-image flex-1 flex justify-end items-center">
+      <img src="assets/login/login.png" class="object-cover w-[81%]" alt="Login Image" />
+    </div>
+  </div>
+</div>

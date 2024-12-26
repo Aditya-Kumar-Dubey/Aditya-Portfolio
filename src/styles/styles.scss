@@ -1,0 +1,48 @@
+/* Global styles */
+@use './variables';
+@use './material-theme';
+
+/* Include global resets and utility classes */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.m-container {
+  max-width: 1440px;
+  width: 60%;
+  margin: auto;
+}
+
+[data-theme='dark'] {
+  --background-color: #14171A;
+  --text-color: #ffffff;
+  --primary-color: #657786;
+  --text-bg: #000000
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.black {
+  color: var(--text-color) !important;
+}
+
+.white {
+  color: var(--text-color-on-bg) !important;
+}

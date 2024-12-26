@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #222;
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+input[type="email"] {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    width: 20%;
+    min-width: 300px;
+    margin-bottom: 1rem;
+}
+
+button[type="submit"] {
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    background-color: #fff;
+    color: #222;
+    border: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    input[type="email"] {
+        width: 40%;
+    }
+}

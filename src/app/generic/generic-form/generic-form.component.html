@@ -1,0 +1,23 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <h2>{{ formConfig.title }}</h2>
+  <p>{{ formConfig.description }}</p>
+
+  <div *ngFor="let field of formConfig.fields">
+    <mat-form-field class="w-full">
+      <mat-label>{{ field.label }}</mat-label>
+      <input matInput [type]="field.type" [placeholder]="field.placeholder" [formControlName]="field.label">
+    </mat-form-field>
+  </div>
+  <!-- <button type="submit" >{{ formConfig.submitButtonText }}</button>
+  <button type="button" >{{ formConfig.cancelButtonText }}</button> -->
+
+  <div class="flex flex-row gap-4">
+    <app-generic-button [text]="formConfig.submitButtonText" [type]="'submit'"
+      [styles]="{ 'background-color': '#2071A7' , 'color': 'white', 'border': 'none' }" (action)="onSubmit()">
+    </app-generic-button>
+    <app-generic-button [text]="formConfig.cancelButtonText"
+      [styles]="{ 'background-color': '#2071A7', 'color': 'white', 'border': 'none' }" (action)="onCancel()">
+    </app-generic-button>
+  </div>
+
+</form>

@@ -1,0 +1,70 @@
+<div class="profile-container">
+    <h2>User Profile</h2>
+
+    <div *ngIf="!isEditing" class="profile-view">
+        <div class="profile-field">
+            <strong>First Name:</strong> {{ user.firstName }}
+        </div>
+        <div class="profile-field">
+            <strong>Last Name:</strong> {{ user.lastName }}
+        </div>
+        <div class="profile-field">
+            <strong>Email:</strong> {{ user.email }}
+        </div>
+        <div class="profile-field">
+            <strong>Phone:</strong> {{ user.phone }}
+        </div>
+        <div class="profile-field">
+            <strong>Bio:</strong> {{ user.bio }}
+        </div>
+        <button (click)="toggleEdit()" class="btn-edit bg-primary">Edit Profile</button>
+    </div>
+
+    <form *ngIf="isEditing" [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="profile-form">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input id="firstName" type="text" formControlName="firstName">
+            <div *ngIf="profileForm.get('firstName')?.errors?.['required'] && profileForm.get('firstName')?.touched"
+                class="error-message">
+                First name is required
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" type="text" formControlName="lastName">
+            <div *ngIf="profileForm.get('lastName')?.errors?.['required'] && profileForm.get('lastName')?.touched"
+                class="error-message">
+                Last name is required
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email">
+            <div *ngIf="profileForm.get('email')?.errors?.['required'] && profileForm.get('email')?.touched"
+                class="error-message">
+                Email is required
+            </div>
+            <div *ngIf="profileForm.get('email')?.errors?.['email'] && profileForm.get('email')?.touched"
+                class="error-message">
+                Please enter a valid email
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" formControlName="phone">
+        </div>
+
+        <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea id="bio" formControlName="bio" rows="4"></textarea>
+        </div>
+
+        <div class="button-group">
+            <button type="submit" [disabled]="!profileForm.valid" class="btn-save bg-primary">Save</button>
+            <button type="button" (click)="cancelEdit()" class="btn-cancel">Cancel</button>
+        </div>
+    </form>
+</div>
