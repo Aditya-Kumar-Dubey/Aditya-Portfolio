@@ -5,12 +5,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AboutComponent } from "../../about-us/about/about.component";
 import { SkillsComponent } from "../../skills/skills/skills.component";
 import { QualificationComponent } from "../../qualification/qualification/qualification.component";
+import { ProjectsComponent } from "../../projects/projects.component";
 
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, RouterModule, FontAwesomeModule, AboutComponent, SkillsComponent, QualificationComponent],
+  imports: [CommonModule, RouterModule, FontAwesomeModule, AboutComponent, SkillsComponent, QualificationComponent, ProjectsComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })

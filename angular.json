@@ -33,7 +33,8 @@
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles/styles.scss",
               "src/styles/tailwind.scss",
-              "src/styles/vendors.scss"
+              "src/styles/vendors.scss",
+              "node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
